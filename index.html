@@ -1,6 +1,44 @@
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/proscoin/proscoin-website.git
-git push -u origin main
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProsCoin - Token Oficial</title>
+  <script>
+    function addToMetaMask() {
+      ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: '0xDd29a1C501D6e04eD6bC149C01D8C34cfab22C33',
+            symbol: 'PROS',
+            decimals: 18,
+            image: 'https://raw.githubusercontent.com/.../logo.png' // substituir pela URL real da logo
+          },
+        },
+      });
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="min-h-screen flex flex-col items-center justify-center px-4">
+    <div class="max-w-xl w-full bg-gray-800 rounded-2xl shadow-lg p-8 text-center">
+      <img src="logo.png" alt="ProsCoin Logo" class="w-32 h-32 mx-auto mb-4">
+      <h1 class="text-3xl font-bold mb-2">ProsCoin (PROS)</h1>
+      <p class="mb-4 text-gray-300">Token oficial BEP-20 da comunidade ProsCoin.</p>
+
+      <div class="bg-gray-700 rounded p-4 text-left mb-4">
+        <p><strong>Contrato:</strong></p>
+        <p class="break-all text-sm text-green-400">0xDd29a1C501D6e04eD6bC149C01D8C34cfab22C33</p>
+        <a href="https://bscscan.com/token/0xDd29a1C501D6e04eD6bC149C01D8C34cfab22C33" target="_blank" class="text-blue-400 underline text-sm">Ver no BscScan</a>
+      </div>
+
+      <button onclick="addToMetaMask()" class="bg-yellow-500 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-400">Adicionar à MetaMask</button>
+    </div>
+
+    <footer class="text-sm text-gray-500 mt-8">&copy; 2025 ProsCoin. Todos os direitos reservados.</footer>
+  </div>
+</body>
+</html>
